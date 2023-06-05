@@ -5,7 +5,7 @@ import { SupportService } from '../services/support/support.service';
 
 @ApiTags('geothermik')
 @Controller()
-export class AppController {
+export class SupportController {
   constructor(private readonly supportService: SupportService) {}
 
   @ApiOkResponse({ description: 'Hello description.' })

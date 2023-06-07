@@ -12,7 +12,7 @@ export class Amount {
         return this.value;
     }
 
-    substact(amount: Amount): Amount {
+    substract(amount: Amount): Amount {
         if(this.value < amount.getValue()) {
             throw new Error("Cannot substract a greater amount from a smaller one.");
         }

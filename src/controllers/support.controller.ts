@@ -4,12 +4,12 @@ import { SupportEstimationRequestDto, SupportEstimationDto } from '../model/dto/
 import { SupportService } from '../services/support/support.service';
 
 @ApiTags('geothermik')
-@Controller()
+@Controller('support')
 export class SupportController {
   constructor(private readonly supportService: SupportService) {}
 
-  @ApiOkResponse({ description: 'Hello description.' })
-  @Post()
+  @ApiOkResponse({ description: 'Endpoint to estimate the support eligibility and amount' })
+  @Post('estimations')
   estimateSupport(@Body() supportEstimationRequestDto: SupportEstimationRequestDto): SupportEstimationDto {
     return this.supportService.isElligbleForSupport(supportEstimationRequestDto);
   }

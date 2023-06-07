@@ -1,7 +1,15 @@
+import { IsPositive, Validate } from "class-validator";
 import { Amount } from "./amount";
+import { IsNumberInRangePipe } from "../../validation-pipes/is-number-in-range.pipe";
 
 export class HouseholdIncomeAmount extends Amount {
-    isInAcceptedRange(): boolean {
-        return this.value >= 10000 && this.value <= 100000;
+
+    constructor(value: number) {
+        super(value);
     }
+    
+    @IsPositive()
+    @Validate(IsNumberInRangePipe, [10000, 100000])
+    protected value: number;
+
 }

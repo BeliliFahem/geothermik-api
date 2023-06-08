@@ -1,7 +1,7 @@
 import { Amount } from "../../../model/domain";
 
 export class SupportEstimationDto {
-    isEligible = false;
+    isEligible: boolean = false;
     supportAmount: Amount;
     eligibilityMessage: string;
 

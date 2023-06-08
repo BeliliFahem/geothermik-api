@@ -5,8 +5,7 @@ import { Type } from "class-transformer";
 export class SupportEstimationRequestDto {
 
     @IsIn(['M', 'MME'])
-    // @IsNotEmpty()
-    civility: string; // TODO: create enum (M, MME) ?
+    civility: string; // TODO: create enum (M, MME)
 
     @IsNotEmpty()
     firstName: string;
@@ -18,7 +17,7 @@ export class SupportEstimationRequestDto {
     email: string;
 
     @IsPhoneNumber('FR')
-    phoneNumber = '';
+    phoneNumber: string;
 
     @IsBoolean()
     isOwner: boolean; // TODO: create enum (OWNER, TENANT) ?

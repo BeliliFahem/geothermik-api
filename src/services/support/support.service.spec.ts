@@ -48,7 +48,7 @@ describe('SupportService', () => {
       supportEstimationRequestDto.householdPersonCount = 3;
 
       expect(service.isElligbleForSupport(supportEstimationRequestDto))
-        .toEqual(SupportEstimationDto.createEligible(3050));
+        .toEqual(SupportEstimationDto.createEligible(new Amount(3050)));
     });
 
     it('should not be eligible when support amount is equal to zero', () => {

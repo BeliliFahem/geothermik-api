@@ -1,3 +1,3 @@
-export { Amount } from "./amount";
-export { HouseholdIncomeAmount } from "./household-income";
-export { Rate } from "./rate";
+export { Amount } from "./amount.dom";
+export { HouseholdIncomeAmount } from "./household-income.dom";
+export { Rate } from "./rate.dom";

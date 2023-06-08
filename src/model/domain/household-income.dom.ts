@@ -1,5 +1,5 @@
 import { IsPositive, Validate } from "class-validator";
-import { Amount } from "./amount";
+import { Amount } from "./";
 import { IsNumberInRangePipe } from "../../validation-pipes/is-number-in-range.pipe";
 
 export class HouseholdIncomeAmount extends Amount {

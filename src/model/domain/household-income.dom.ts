@@ -1,6 +1,5 @@
-import { IsPositive, Validate } from "class-validator";
+import { Max, Min } from "class-validator";
 import { Amount } from "./";
-import { IsNumberInRangePipe } from "../../validation-pipes/is-number-in-range.pipe";
 
 export class HouseholdIncomeAmount extends Amount {
 
@@ -8,8 +7,8 @@ export class HouseholdIncomeAmount extends Amount {
         super(value);
     }
     
-    @IsPositive()
-    @Validate(IsNumberInRangePipe, [10000, 100000])
+    @Min(10000)
+    @Max(100000)
     protected value: number;
 
 }

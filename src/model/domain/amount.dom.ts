@@ -1,7 +1,9 @@
-import { Rate } from ".";
+import { Min } from "class-validator";
+import { Rate } from "./";
 // TODO: add unit tests
 export class Amount {
 
+    @Min(0)
     protected value: number;
 
     constructor(value: number) {

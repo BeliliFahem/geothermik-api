@@ -77,7 +77,7 @@ describe('SupportController - e2e', () => {
             .send(supportEstimationRequestDto)
             .expect(400)
             .then((response) => {
-                expect(response.body.message).toContain("householdIncomes.The value must be between 10000 and 100000.");
+                expect(response.body.message).toContain("householdIncomes.value must not be less than 10000");
             });
     });
 

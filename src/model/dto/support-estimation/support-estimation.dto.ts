@@ -1,15 +1,17 @@
+import { Amount } from "../../../model/domain";
+
 export class SupportEstimationDto {
     isEligible = false;
-    supportAmount: number;
+    supportAmount: Amount;
     eligibilityMessage: string;
 
-    private constructor(isEligible: boolean, supportAmount: number, eligibilityMessage: string) {
+    private constructor(isEligible: boolean, supportAmount: Amount, eligibilityMessage: string) {
         this.isEligible = isEligible;
         this.supportAmount = supportAmount;
         this.eligibilityMessage = eligibilityMessage;
     }
 
-    static createEligible(supportAmount: number): SupportEstimationDto {
+    static createEligible(supportAmount: Amount): SupportEstimationDto {
         return new SupportEstimationDto(
             true,
             supportAmount,
@@ -20,7 +22,7 @@ export class SupportEstimationDto {
     static createNotEligible(): SupportEstimationDto {
         return new SupportEstimationDto(
             false,
-            0,
+            new Amount(0),
             "Vous n'êtes pas éligible à notre programme d'aides et d'accompagnement."
         );
     }

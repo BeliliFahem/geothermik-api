@@ -4,7 +4,7 @@ import { INestApplication, ValidationPipe } from '@nestjs/common';
 import * as request from 'supertest';
 import { AppModule } from '../../src/app.module';
 import { SupportEstimationDto, SupportEstimationRequestDto } from '../../src/model/dto/support-estimation';
-import { HouseholdIncomeAmount } from '../../src/model/domain';
+import { Amount, HouseholdIncomeAmount } from '../../src/model/domain';
 
 describe('SupportController - e2e', () => {
     let app: INestApplication;
@@ -56,7 +56,7 @@ describe('SupportController - e2e', () => {
             .send(supportEstimationRequestDto)
             .expect(201)
             .then((response) => {
-                expect(response.body).toEqual(SupportEstimationDto.createEligible(2775));
+                expect(response.body).toEqual(SupportEstimationDto.createEligible(new Amount(2775)));
             });
     });
 

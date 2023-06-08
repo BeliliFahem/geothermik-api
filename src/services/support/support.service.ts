@@ -10,7 +10,7 @@ export class SupportService {
         if (supportEstimationRequestDto.isOwner) {
             const supportAmount = this.calculateSupportAmount(supportEstimationRequestDto);
             if(supportAmount.getValue() > 0) {
-                return SupportEstimationDto.createEligible(supportAmount.getValue());
+                return SupportEstimationDto.createEligible(supportAmount);
             }
         }
         return SupportEstimationDto.createNotEligible();

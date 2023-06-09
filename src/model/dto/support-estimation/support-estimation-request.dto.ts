@@ -1,11 +1,12 @@
-import { IsBoolean, IsEmail, IsIn, IsNotEmpty, IsPhoneNumber, IsPositive, ValidateNested } from "class-validator";
-import { HouseholdIncomeAmount } from "../../../model/domain";
+import { IsBoolean, IsEmail, IsEnum, IsNotEmpty, IsPhoneNumber, IsPositive, ValidateNested } from "class-validator";
+import { Civility, HouseholdIncomeAmount } from "../../../model/domain";
 import { Type } from "class-transformer";
+import { ApiProperty } from "@nestjs/swagger";
 
 export class SupportEstimationRequestDto {
 
-    @IsIn(['M', 'MME'])
-    civility: string; // TODO: create enum (M, MME)
+    @IsEnum(Civility)
+    civility: Civility;
 
     @IsNotEmpty()
     firstName: string;

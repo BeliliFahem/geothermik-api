@@ -4,7 +4,7 @@ import { INestApplication, ValidationPipe } from '@nestjs/common';
 import * as request from 'supertest';
 import { AppModule } from '../../src/app.module';
 import { SupportEstimationDto, SupportEstimationRequestDto } from '../../src/model/dto/support-estimation';
-import { Amount, HouseholdIncomeAmount } from '../../src/model/domain';
+import { Amount, Civility, HouseholdIncomeAmount } from '../../src/model/domain';
 
 describe('SupportController - e2e', () => {
     let app: INestApplication;
@@ -41,7 +41,7 @@ describe('SupportController - e2e', () => {
 
     it(`/POST support/estimations - full good request payload`, () => {
         const supportEstimationRequestDto = new SupportEstimationRequestDto();
-        supportEstimationRequestDto.civility = 'M';
+        supportEstimationRequestDto.civility = Civility.M;
         supportEstimationRequestDto.firstName = 'John';
         supportEstimationRequestDto.lastName = 'Doe';
         supportEstimationRequestDto.email = 'test@mail.com';
@@ -62,7 +62,7 @@ describe('SupportController - e2e', () => {
 
     it(`/POST support/estimations - householde income amount less than 10000`, () => {
         const supportEstimationRequestDto = new SupportEstimationRequestDto();
-        supportEstimationRequestDto.civility = 'M';
+        supportEstimationRequestDto.civility = Civility.M;
         supportEstimationRequestDto.firstName = 'John';
         supportEstimationRequestDto.lastName = 'Doe';
         supportEstimationRequestDto.email = 'test@mail.com';

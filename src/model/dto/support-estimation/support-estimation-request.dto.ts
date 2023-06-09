@@ -6,6 +6,7 @@ import { ApiProperty } from "@nestjs/swagger";
 export class SupportEstimationRequestDto {
 
     @IsEnum(Civility)
+    @ApiProperty({ enumName: "Civility", enum: [Civility.M, Civility.Mme] })
     civility: Civility;
 
     @IsNotEmpty()

@@ -23,7 +23,9 @@ $ npm install
 $ npm run start
 The API is reay on http://localhost:3000/api-doc !
 ```
-You can now, start the front-end that consume this API. See https://gitlab.com/geothermik/geothermik-angular
+You can now, start the front-end that consume this API. See 
+- Gilab: https://gitlab.com/geothermik/geothermik-angular
+- GitHub: https://github.com/BeliliFahem/geothermik-angular
 
 ## Test
 
